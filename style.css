@@ -918,9 +918,9 @@ button, a, .art-card, .dot {
 }
 
 .star-hover {
-    color: #ffcc5d !important;
+    color: #ffcc5d 
     animation: star-twinkle 1s infinite alternate ease-in-out;
-    text-shadow: 0 0 15px rgba(255, 204, 93, 0.9) !important;
+    text-shadow: 0 0 15px rgba(255, 204, 93, 0.9) 
 }
 
 @keyframes star-twinkle {
