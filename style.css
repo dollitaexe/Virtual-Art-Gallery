@@ -1,0 +1,1093 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sauce One', 'Open Sans', sans-serif;
+    color: #fff;
+    overflow: hidden;
+    height: 100%;
+    background-color: #1a1a1a;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1"><path d="M12,3 C16.4183,3 20,6.58172 20,11 C20,12.8487 19.3729,14.551 18.3199,15.9056 L20.7071,18.2929 C21.0976,18.6834 21.0976,19.3166 20.7071,19.7071 C20.3166,20.0976 19.6834,20.0976 19.2929,19.7071 L16.9056,17.3199 C15.551,18.3729 13.8487,19 12,19 C7.58172,19 4,15.4183 4,11 C4,6.58172 7.58172,3 12,3 Z" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" fill="none"/></svg>') 12 12, auto;
+}
+
+body {
+    background-image: url('wop_bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('wop_bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    filter: blur(15px);
+    z-index: -1;
+}
+
+.background-blur {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('wop_bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    filter: blur(25px);
+    z-index: -1;
+    opacity: 1;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1500;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+header .logo-container {
+    flex: 0 0 auto;
+}
+
+header nav ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header nav li {
+    position: relative;
+}
+
+header nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+header nav a:hover,
+header nav a.active {
+    color: rgba(255, 255, 255, 1);
+}
+
+.y2k-button {
+    display: inline-block;
+    padding: 6px 12px;
+    background: none;
+    border: none;
+    color: #ffffff !important;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-shadow: none;
+    box-shadow: none;
+    transition: all 0.3s;
+    margin: 0;
+    position: relative;
+}
+
+.y2k-button::after {
+    display: none;
+}
+
+.y2k-button:hover {
+    transform: none;
+    box-shadow: none;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+.y2k-button.active {
+    background: none;
+    box-shadow: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.logo-container {
+    position: relative;
+    flex: 0 0 auto;
+    margin-right: 40px;
+    text-align: left;
+}
+
+.gallery-logo {
+    font-family: 'Open Sauce One', 'Open Sans', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #ffffff;
+    letter-spacing: 1.5px;
+    margin: 0;
+    padding: 0;
+    text-shadow: none;
+    background: none;
+    -webkit-text-fill-color: #ffffff;
+    position: relative;
+    display: inline-block;
+}
+
+.gallery-logo::after {
+    display: none;
+}
+
+.logo {
+    font-family: 'Open Sauce One', 'Open Sans', sans-serif;
+    font-size: 1.5em;
+    font-weight: 500;
+    color: #e0e0e0;
+    letter-spacing: 1.5px;
+}
+
+.top-controls {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-btn {
+    background: rgba(60, 60, 60, 0.4);
+    border: none;
+    border-radius: 8px;
+    color: #e0e0e0;
+    font-size: 0.9em;
+    padding: 8px 12px;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.nav-btn:hover {
+    background: rgba(80, 80, 80, 0.5);
+    transform: translateY(-2px);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding-top: 80px;
+    padding-bottom: 160px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.gallery-carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 3000px;
+    transform-style: preserve-3d;
+    overflow: visible;
+}
+
+.gallery-carousel.transitioning {
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.art-card {
+    position: absolute;
+    width: 520px;
+    background-color: rgba(20, 20, 20, 0.85);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    will-change: transform, opacity;
+    transform-origin: center center;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.art-card.current-art {
+    z-index: 10;
+    opacity: 1 !important;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.art-image-container {
+    position: relative;
+    height: 320px;
+    overflow: hidden;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.art-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+    transform: scale(1.02);
+    opacity: 0.95;
+    filter: brightness(0.95);
+}
+
+.art-card.current-art .art-image-container img {
+    transform: scale(1);
+    opacity: 1;
+    filter: brightness(1);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.art-card:hover .art-image-container img {
+    transform: scale(1.03);
+}
+
+.art-image-container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(255,255,255,0.05) 20%, transparent);
+    transform: rotateX(180deg);
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.art-info {
+    padding: 18px 20px;
+    text-align: left;
+    position: relative;
+    background-color: rgba(50, 50, 50, 0.15);
+    backdrop-filter: blur(18px) saturate(120%);
+    -webkit-backdrop-filter: blur(18px) saturate(120%);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.art-info::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(20, 20, 20, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: -1;
+}
+
+.art-card:hover .art-info {
+    background-color: rgba(50, 50, 50, 0.2);
+}
+
+.art-info h2 {
+    margin-top: 0;
+    margin-bottom: 6px;
+    font-size: 1.4em;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.95);
+    font-family: 'Open Sauce One', 'Open Sans', sans-serif;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.art-info .date {
+    font-size: 0.8em;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 8px;
+    font-style: italic;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.art-info .quote {
+    font-size: 0.9em;
+    font-style: italic;
+    margin-bottom: 5px;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.artwork-details {
+    margin-top: 6px;
+}
+
+.artwork-details p {
+    margin: 3px 0;
+    font-size: 0.8em;
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 6px;
+}
+
+.expand-button {
+    position: absolute;
+    top: 12px;
+    right: 45px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: rgba(255, 255, 255, 0.95);
+    border: none;
+    border-radius: 30px;
+    padding: 8px 12px;
+    font-size: 0.9em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    opacity: 0;
+    z-index: 5;
+}
+
+.art-card:hover .expand-button {
+    opacity: 1;
+}
+
+.expand-button span {
+    margin-right: 8px;
+    font-size: 1.1em;
+}
+
+.detail-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(10, 10, 10, 0.9);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.detail-panel.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.close-detail {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2em;
+    cursor: pointer;
+    z-index: 2001;
+}
+
+.detail-content {
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    height: 85%;
+    background-color: rgba(25, 25, 25, 0.8);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.detail-image {
+    width: 60%;
+    height: 100%;
+    object-fit: contain;
+    padding: 20px;
+    background-color: rgba(10, 10, 10, 0.5);
+}
+
+.detail-info {
+    width: 40%;
+    padding: 30px;
+    overflow-y: auto;
+}
+
+.detail-title {
+    font-family: 'Open Sauce One', 'Open Sans', sans-serif;
+    font-size: 2em;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.detail-artist, .detail-date, .detail-medium, .detail-dimensions {
+    margin: 5px 0;
+    font-size: 1em;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.detail-description {
+    margin-top: 20px;
+    line-height: 1.6;
+}
+
+.back-button, .options-button {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    font-size: 1em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.back-button {
+    top: 12px;
+    left: 12px;
+}
+
+.options-button {
+    top: 12px;
+    right: 12px;
+}
+
+.expand-button:hover, .back-button:hover, .options-button:hover {
+    background-color: rgba(30, 30, 30, 0.8);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.artist-info-bar {
+    position: fixed;
+    bottom: 65px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    min-width: 400px;
+    padding: 15px 20px;
+    background-color: rgba(50, 50, 50, 0.6);
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    backdrop-filter: blur(10px) saturate(180%);
+    -webkit-backdrop-filter: blur(10px) saturate(180%);
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.artist-portrait {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    margin-right: 15px;
+    margin-left: 5px;
+    object-fit: cover;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.artist-details {
+    flex-grow: 1;
+    text-align: left;
+}
+
+.artist-details h3 {
+    margin: 0;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #e0e0e0;
+    font-family: 'Open Sauce One', 'Open Sans', sans-serif;
+}
+
+.artist-details p {
+    margin: 0;
+    font-size: 0.8em;
+    color: #b0b0b0;
+}
+
+.artist-nav-button {
+    background: rgba(180, 180, 180, 0.2);
+    border: none;
+    color: #ffffff;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.artist-nav-button:hover {
+    color: #fff;
+    background: rgba(60, 60, 60, 0.6);
+    transform: translateY(-2px);
+}
+
+.carousel-dots {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #fff;
+    transform: scale(1.2);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+.dot:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.action-buttons {
+    position: fixed;
+    left: clamp(10px, 3vw, 25px);
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background-color: rgba(20, 20, 20, 0.7);
+    padding: 14px 10px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px) saturate(150%);
+    -webkit-backdrop-filter: blur(10px) saturate(150%);
+    z-index: 999;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    color: #d0d0d0;
+    font-size: 1.6em;
+    cursor: pointer;
+    padding: 10px;
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.action-btn:hover {
+    color: #fff;
+    transform: translateY(-2px);
+    background-color: rgba(60, 60, 60, 0.3);
+}
+
+.action-btn[aria-label="Favorite"] {
+    position: relative;
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 32px;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    outline: none;
+    background-color: rgba(20, 20, 20, 0.4);
+    backdrop-filter: blur(5px);
+}
+
+.action-btn[aria-label="Favorite"]:active {
+    transform: scale(0.8);
+}
+
+.action-btn[aria-label="Favorite"] span {
+    display: block;
+    transform-origin: center;
+    transition: color 0.3s, transform 0.3s, text-shadow 0.3s;
+}
+
+.action-btn[aria-label="Favorite"]:hover span {
+    transform: scale(1.1);
+    color: #ffcc5d;
+    text-shadow: 0 0 10px rgba(255, 204, 93, 0.7);
+}
+
+.action-btn[aria-label="Favorite"].active span {
+    color: #3678ff;
+    text-shadow: 0 0 15px rgba(54, 120, 255, 0.8);
+    animation: star-favorite-pulse 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes star-favorite-pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.4);
+    }
+    100% {
+        transform: scale(1.2);
+    }
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 8px 0;
+    background-color: rgba(10, 10, 10, 0.7);
+    font-size: 0.75em;
+    z-index: 1000;
+    color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+@media (max-width: 992px) {
+    .logo {
+        font-size: 1.3em;
+    }
+    .art-card {
+        width: 480px;
+    }
+    .art-image-container { 
+        height: 300px;
+    }
+    .art-info .date { 
+        top: 295px; 
+    }
+    .detail-content {
+        flex-direction: column;
+        height: auto;
+        max-height: 90%;
+    }
+    .detail-image {
+        width: 100%;
+        height: 50%;
+    }
+    .detail-info {
+        width: 100%;
+        height: 50%;
+    }
+    .artist-info-bar {
+        min-width: 320px;
+    }
+    .gallery-carousel {
+        perspective: 2000px;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo { 
+        font-size: 1.1em; 
+    }
+    .nav-btn {
+        padding: 6px 10px;
+        font-size: 0.8em;
+    }
+    .art-card {
+        width: 450px;
+    }
+    .art-image-container { 
+        height: 280px;
+    }
+    .art-info .date { 
+        top: 275px; 
+    }
+    .artist-info-bar {
+        min-width: 300px;
+        padding: 12px 15px;
+    }
+    .artist-portrait { 
+        width: 38px;
+        height: 38px;
+    }
+    .artist-details h3 { 
+        font-size: 0.8em; 
+    }
+    .artist-details p { 
+        font-size: 0.6em; 
+    }
+    .carousel-dots { 
+        bottom: 35px; 
+    }
+    .action-buttons { 
+        display: flex;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 15px;
+        top: auto;
+        transform: none;
+        flex-direction: row;
+        justify-content: center;
+        background: none;
+        padding: 0;
+        border: none;
+    }
+    .action-btn {
+        background-color: rgba(20, 20, 20, 0.7);
+        margin: 0 5px;
+    }
+    .gallery-carousel {
+        perspective: 1500px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo { 
+        font-size: 0.9em; 
+    }
+    .top-controls {
+        gap: 8px;
+    }
+    .nav-btn {
+        padding: 5px 8px;
+        font-size: 0.7em;
+    }
+    .gallery-carousel { 
+        perspective: 1000px; 
+    }
+    .art-card {
+        width: 360px;
+    }
+    .art-image-container { 
+        height: 240px;
+    }
+    .art-info h2 { 
+        font-size: 1.1em; 
+    }
+    .art-info .quote { 
+        font-size: 0.8em; 
+    }
+    .art-info .date { 
+        top: 235px; 
+    }
+    .expand-button { 
+        font-size: 0.7em; 
+        padding: 5px 8px; 
+        top: 8px; 
+        right: 38px;
+    }
+    .back-button, .options-button { 
+        width: 24px; 
+        height: 24px; 
+        font-size: 0.9em; 
+        top: 8px;
+    }
+    .back-button { 
+        left: 8px; 
+    }
+    .options-button { 
+        right: 8px; 
+    }
+    .artist-info-bar {
+        padding: 10px 12px;
+    }
+    .artist-portrait { 
+        width: 32px;
+        height: 32px;
+    }
+    .artist-nav-button { 
+        font-size: 1.1em; 
+        width: 28px;
+        height: 28px;
+    }
+    .carousel-dots { 
+        bottom: 30px; 
+        gap: 8px; 
+    }
+    .dot { 
+        width: 6px; 
+        height: 6px; 
+    }
+    .action-btn {
+        width: 38px;
+        height: 38px;
+        font-size: 1.4em;
+    }
+    footer { 
+        font-size: 0.7em; 
+        padding: 6px 0; 
+    }
+}
+
+@media (hover: hover) {
+    .art-card:hover .art-image-container img {
+        transform: scale(1.03);
+    }
+}
+
+@media (hover: none) {
+    .art-card, .expand-button, .back-button, .options-button, 
+    .artist-nav-button, .artist-search-button, .action-btn {
+        transition: all 0.3s ease;
+    }
+    
+    .action-btn {
+        padding: 12px;
+    }
+    
+    .dot {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+button, a, .art-card, .dot {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M11,16 C11,18.7614 13.2386,21 16,21 C18.7614,21 21,18.7614 21,16 C21,13.2386 18.7614,11 16,11 C13.2386,11 11,13.2386 11,16 Z M16,7 C11.0294,7 7,11.0294 7,16 C7,20.9706 11.0294,25 16,25 C20.9706,25 25,20.9706 25,16 C25,11.0294 20.9706,7 16,7 Z" stroke="rgba(255,255,255,0.9)" stroke-width="1.5" fill="rgba(255,255,255,0.1)"/><path d="M16,6 L16,2" stroke="rgba(255,255,255,0.7)" stroke-width="1"/><path d="M16,30 L16,26" stroke="rgba(255,255,255,0.7)" stroke-width="1"/><path d="M6,16 L2,16" stroke="rgba(255,255,255,0.7)" stroke-width="1"/><path d="M30,16 L26,16" stroke="rgba(255,255,255,0.7)" stroke-width="1"/></svg>') 16 16, pointer;
+}
+
+.y2k-message {
+    position: fixed;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, #cce6ff, #99c2ff, #cce6ff);
+    border: 3px solid #fff;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(54, 120, 255, 0.7), 
+                inset 0 -3px 6px rgba(0,0,0,0.2),
+                0 0 20px rgba(54, 120, 255, 0.4);
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 12px 25px;
+    z-index: 9999;
+    transition: top 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    letter-spacing: 0.5px;
+}
+
+.y2k-message.show {
+    top: 90px;
+}
+
+.star-hover {
+    color: #ffcc5d !important;
+    animation: star-twinkle 1s infinite alternate ease-in-out;
+    text-shadow: 0 0 15px rgba(255, 204, 93, 0.9) !important;
+}
+
+@keyframes star-twinkle {
+    0% {
+        transform: scale(1);
+        text-shadow: 0 0 10px rgba(255, 204, 93, 0.5);
+    }
+    100% {
+        transform: scale(1.2);
+        text-shadow: 0 0 20px rgba(255, 204, 93, 0.9);
+    }
+}
+
+.action-btn[aria-label="Favorite"] span {
+    display: block;
+    transform-origin: center;
+    transition: color 0.3s, transform 0.3s, text-shadow 0.3s;
+}
+
+.y2k-button-flash {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 0;
+    pointer-events: none;
+    animation: y2k-button-flash 0.3s forwards;
+    z-index: 1;
+}
+
+@keyframes y2k-button-flash {
+    0% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.content-section {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding-top: 80px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 10;
+}
+
+.section-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 40px;
+    background-color: rgba(25, 25, 25, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 15px;
+    color: #fff;
+}
+
+.section-container h2 {
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.about-content {
+    line-height: 1.8;
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-content p {
+    margin-bottom: 20px;
+}
+
+.artists-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.artist-card {
+    background-color: rgba(40, 40, 40, 0.7);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.artist-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.artist-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.artist-card h3 {
+    font-size: 1.2rem;
+    margin: 15px 15px 5px 15px;
+}
+
+.artist-card p {
+    margin: 0 15px 15px 15px;
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+.exhibitions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.exhibition-card {
+    background-color: rgba(40, 40, 40, 0.7);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.exhibition-card:hover {
+    transform: translateY(-5px);
+}
+
+.exhibition-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.exhibition-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.exhibition-card:hover .exhibition-image img {
+    transform: scale(1.05);
+}
+
+.exhibition-info {
+    padding: 20px;
+}
+
+.exhibition-info h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.exhibition-info p {
+    color: #ccc;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .section-container

@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Art Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://i.postimg.cc/W1D4MhLz/vecteezy-ai-generated-easter-island-rock-moai-statue-isolated-on-35242748.png" type="image/png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://i.postimg.cc/W1D4MhLz/vecteezy-ai-generated-easter-island-rock-moai-statue-isolated-on-35242748.png" type="image/png">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/open-sauce-one@1.0.1/css/opensauceone.min.css">
+    <style>
+        body, html {
+            background-image: url('wop_bg.png') !important;
+            background-size: cover !important;
+            background-position: center !important;
+            background-attachment: fixed !important;
+        }
+        #background-override {
+            display: block !important;
+            background-image: url('wop_bg.png') !important;
+            filter: blur(20px) !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-blur"></div>
+    
+    <header>
+        <div class="logo-container">
+            <h1 class="gallery-logo">Virtual Gallery Art</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" id="nav-home" class="active y2k-button">Home</a></li>
+                <li><a href="#" id="nav-exhibitions" class="y2k-button">Exhibitions</a></li>
+                <li><a href="#" id="nav-artists" class="y2k-button">Artists</a></li>
+                <li><a href="#" id="nav-about" class="y2k-button">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="home-section" class="gallery-carousel">
+            <div class="art-card current-art" data-artist="Vincent van Gogh" data-artist-dob="1853 - 1890" data-artist-origin="Zundert, Netherlands" data-artist-portrait="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Vincent_van_Gogh_-_Self-Portrait_-_Google_Art_Project_%28454045%29.jpg/220px-Vincent_van_Gogh_-_Self-Portrait_-_Google_Art_Project_%28454045%29.jpg">
+                <div class="art-image-container">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/1200px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg" alt="The Starry Night">
+                    <button class="expand-button"><span>&#x26F6;</span> Expand</button>
+                    <button class="back-button">&lt;</button>
+                    <button class="options-button">&#8230;</button>
+                    <div class="artwork-details">
+                        <p class="details">Medium: Oil on canvas</p>
+                        <p class="details">Dimensions: 29 × 36 1/4 in.</p>
+                    </div>
+                </div>
+                <div class="art-info">
+                    <h2>The Starry Night</h2>
+                    <p class="date">June 1889</p>
+                    <p class="quote">"I look at the stars and with all my being feel that I am a part of one of these stars."</p>
+                </div>
+            </div>
+
+            <div class="art-card" data-artist="Vincent van Gogh" data-artist-dob="1853 - 1890" data-artist-origin="Zundert, Netherlands" data-artist-portrait="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Vincent_van_Gogh_-_Self-Portrait_-_Google_Art_Project_%28454045%29.jpg/220px-Vincent_van_Gogh_-_Self-Portrait_-_Google_Art_Project_%28454045%29.jpg">
+                <div class="art-image-container">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Vincent_Willem_van_Gogh_-_Cafe_Terrace_at_Night_%28Yorck%29.jpg/800px-Vincent_Willem_van_Gogh_-_Cafe_Terrace_at_Night_%28Yorck%29.jpg" alt="Café Terrace at Night">
+                    <button class="expand-button"><span>&#x26F6;</span> Expand</button>
+                    <button class="back-button">&lt;</button>
+                    <button class="options-button">&#8230;</button>
+                    <div class="artwork-details">
+                        <p class="details">Medium: Oil on canvas</p>
+                        <p class="details">Dimensions: 80.7 cm × 65.3 cm</p>
+                    </div>
+                </div>
+                <div class="art-info">
+                    <h2>Café Terrace at Night</h2>
+                    <p class="date">September 1888</p>
+                    <p class="quote">"The night is more alive and more richly colored than the day."</p>
+                </div>
+            </div>
+
+            <div class="art-card" data-artist="Vincent van Gogh" data-artist-dob="1853 - 1890" data-artist-origin="Zundert, Netherlands" data-artist-portrait="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Vincent_van_Gogh_-_Self-Portrait_-_Google_Art_Project_%28454045%29.jpg/220px-Vincent_van_Gogh_-_Self-Portrait_-_Google_Art_Project_%28454045%29.jpg">
+                <div class="art-image-container">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Vincent_van_Gogh_-_Almond_blossom_-_Google_Art_Project.jpg/1200px-Vincent_van_Gogh_-_Almond_blossom_-_Google_Art_Project.jpg" alt="Almond Blossom">
+                    <button class="expand-button"><span>&#x26F6;</span> Expand</button>
+                    <button class="back-button">&lt;</button>
+                    <button class="options-button">&#8230;</button>
+                    <div class="artwork-details">
+                        <p class="details">Medium: Oil on canvas</p>
+                        <p class="details">Dimensions: 73.3 cm × 92.4 cm</p>
+                    </div>
+                </div>
+                <div class="art-info">
+                    <h2>Almond Blossom</h2>
+                    <p class="date">1890</p>
+                    <p class="quote">"A gift for his newborn nephew."</p>
+                </div>
+            </div>
+            
+            <div class="art-card" data-artist="Sandro Botticelli" data-artist-dob="1445 - 1510" data-artist-origin="Florence, Italy" data-artist-portrait="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Sandro_Botticelli_083.jpg/500px-Sandro_Botticelli_083.jpg">
+                <div class="art-image-container">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/La_nascita_di_Venere_%28Botticelli%29.jpg/1200px-La_nascita_di_Venere_%28Botticelli%29.jpg" alt="The Birth of Venus">
+                    <button class="expand-button"><span>&#x26F6;</span> Expand</button>
+                    <button class="back-button">&lt;</button>
+                    <button class="options-button">&#8230;</button>
+                    <div class="artwork-details">
+                        <p class="details">Medium: Tempera on canvas</p>
+                        <p class="details">Dimensions: 172.5 cm × 278.5 cm</p>
+                    </div>
+                </div>
+                <div class="art-info">
+                    <h2>The Birth of Venus</h2>
+                    <p class="date">c. 1485-1486</p>
+                    <p class="quote">"One of the most famous paintings of the Renaissance, depicting Venus arriving at the shore after her birth."</p>
+                </div>
+            </div>
+
+            <div class="art-card" data-artist="Salvador Dalí" data-artist-dob="1904 - 1989" data-artist-origin="Figueres, Spain" data-artist-portrait="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Salvador_Dal%C3%AD_1939.jpg/220px-Salvador_Dal%C3%AD_1939.jpg">
+                <div class="art-image-container">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/d/dd/The_Persistence_of_Memory.jpg" alt="The Persistence of Memory">
+                    <button class="expand-button"><span>&#x26F6;</span> Expand</button>
+                    <button class="back-button">&lt;</button>
+                    <button class="options-button">&#8230;</button>
+                    <div class="artwork-details">
+                        <p class="details">Medium: Oil on canvas</p>
+                        <p class="details">Dimensions: 24 cm × 33 cm</p>
+                    </div>
+                </div>
+                <div class="art-info">
+                    <h2>The Persistence of Memory</h2>
+                    <p class="date">1931</p>
+                    <p class="quote">"A surreal depiction of melting clocks in a landscape."</p>
+                </div>
+            </div>
+
+            <div class="art-card" data-artist="Edvard Munch" data-artist-dob="1863 - 1944" data-artist-origin="Oslo, Norway" data-artist-portrait="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Portrait_of_Edvard_Munch_%28cropped%29.png/250px-Portrait_of_Edvard_Munch_%28cropped%29.png">
+                <div class="art-image-container">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Edvard_Munch%2C_1893%2C_The_Scream%2C_oil%2C_tempera_and_pastel_on_cardboard%2C_91_x_73_cm%2C_National_Gallery_of_Norway.jpg/800px-Edvard_Munch%2C_1893%2C_The_Scream%2C_oil%2C_tempera_and_pastel_on_cardboard%2C_91_x_73_cm%2C_National_Gallery_of_Norway.jpg" alt="The Scream">
+                    <button class="expand-button"><span>&#x26F6;</span> Expand</button>
+                    <button class="back-button">&lt;</button>
+                    <button class="options-button">&#8230;</button>
+                    <div class="artwork-details">
+                        <p class="details">Medium: Oil, tempera, pastel on cardboard</p>
+                        <p class="details">Dimensions: 91 cm × 73 cm</p>
+                    </div>
+                </div>
+                <div class="art-info">
+                    <h2>The Scream</h2>
+                    <p class="date">1893</p>
+                    <p class="quote">"I felt a scream passing through nature."</p>
+                </div>
+            </div>
+
+            <div class="art-card" data-artist="Johannes Vermeer" data-artist-dob="1632 - 1675" data-artist-origin="Delft, Netherlands" data-artist-portrait="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Cropped_version_of_Jan_Vermeer_van_Delft_002.jpg/500px-Cropped_version_of_Jan_Vermeer_van_Delft_002.jpg">
+                <div class="art-image-container">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/1665_Girl_with_a_Pearl_Earring.jpg/800px-1665_Girl_with_a_Pearl_Earring.jpg" alt="Girl with a Pearl Earring">
+                    <button class="expand-button"><span>&#x26F6;</span> Expand</button>
+                    <button class="back-button">&lt;</button>
+                    <button class="options-button">&#8230;</button>
+                    <div class="artwork-details">
+                        <p class="details">Medium: Oil on canvas</p>
+                        <p class="details">Dimensions: 44.5 cm × 39 cm</p>
+                    </div>
+                </div>
+                <div class="art-info">
+                    <h2>Girl with a Pearl Earring</h2>
+                    <p class="date">c. 1665</p>
+                    <p class="quote">"Known as the 'Dutch Mona Lisa' for her enigmatic gaze."</p>
+                </div>
+            </div>
+
+            <div class="art-card" data-artist="Katsushika Hokusai" data-artist-dob="1760 - 1849" data-artist-origin="Edo (Tokyo), Japan" data-artist-portrait="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Hokusai_as_an_old_man.jpg/500px-Hokusai_as_an_old_man.jpg">
+                <div class="art-image-container">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Great_Wave_off_Kanagawa2.jpg/1200px-Great_Wave_off_Kanagawa2.jpg" alt="The Great Wave off Kanagawa">
+                    <button class="expand-button"><span>&#x26F6;</span> Expand</button>
+                    <button class="back-button">&lt;</button>
+                    <button class="options-button">&#8230;</button>
+                    <div class="artwork-details">
+                        <p class="details">Medium: Woodblock print</p>
+                        <p class="details">Dimensions: 25.7 cm × 37.8 cm</p>
+                    </div>
+                </div>
+                <div class="art-info">
+                    <h2>The Great Wave off Kanagawa</h2>
+                    <p class="date">c. 1830-1832</p>
+                    <p class="quote">"An iconic woodblock print that has inspired artists worldwide."</p>
+                </div>
+            </div>
+
+            <div class="art-card" data-artist="Edward Hopper" data-artist-dob="1882 - 1967" data-artist-origin="Nyack, New York, USA" data-artist-portrait="https://uploads5.wikiart.org/images/edward-hopper.jpg!Portrait.jpg">
+                <div class="art-image-container">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Nighthawks_by_Edward_Hopper_1942.jpg/1200px-Nighthawks_by_Edward_Hopper_1942.jpg" alt="Nighthawks">
+                    <button class="expand-button"><span>&#x26F6;</span> Expand</button>
+                    <button class="back-button">&lt;</button>
+                    <button class="options-button">&#8230;</button>
+                    <div class="artwork-details">
+                        <p class="details">Medium: Oil on canvas</p>
+                        <p class="details">Dimensions: 84.1 cm × 152.4 cm</p>
+                    </div>
+                </div>
+                <div class="art-info">
+                    <h2>Nighthawks</h2>
+                    <p class="date">1942</p>
+                    <p class="quote">"Capturing the isolation and loneliness of modern urban life in America."</p>
+                </div>
+            </div>
+
+            <div class="art-card" data-artist="Gustav Klimt" data-artist-dob="1862 - 1918" data-artist-origin="Vienna, Austria" data-artist-portrait="https://sothebys-com.brightspotcdn.com/b8/0e/ecc5773d443194b301a49f13ae30/gustav-klimt-in-1887.jpg">
+                <div class="art-image-container">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/The_Kiss_-_Gustav_Klimt_-_Google_Cultural_Institute.jpg/1200px-The_Kiss_-_Gustav_Klimt_-_Google_Cultural_Institute.jpg" alt="The Kiss">
+                    <button class="expand-button"><span>&#x26F6;</span> Expand</button>
+                    <button class="back-button">&lt;</button>
+                    <button class="options-button">&#8230;</button>
+                    <div class="artwork-details">
+                        <p class="details">Medium: Oil and gold leaf on canvas</p>
+                        <p class="details">Dimensions: 180 cm × 180 cm</p>
+                    </div>
+                </div>
+                <div class="art-info">
+                    <h2>The Kiss</h2>
+                    <p class="date">1907-1908</p>
+                    <p class="quote">"A masterpiece of the golden phase of Klimt's work, depicting an embracing couple."</p>
+                </div>
+            </div>
+
+            <div class="art-card" data-artist="Claude Monet" data-artist-dob="1840 - 1926" data-artist-origin="Paris, France" data-artist-portrait="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Claude_Monet_1899_Nadar_crop.jpg/220px-Claude_Monet_1899_Nadar_crop.jpg">
+                <div class="art-image-container">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Claude_Monet_-_Water_Lilies_-_1906%2C_Ryerson.jpg" alt="Water Lilies">
+                    <button class="expand-button"><span>&#x26F6;</span> Expand</button>
+                    <button class="back-button">&lt;</button>
+                    <button class="options-button">&#8230;</button>
+                    <div class="artwork-details">
+                        <p class="details">Medium: Oil on canvas</p>
+                        <p class="details">Dimensions: 89.5 cm × 100 cm</p>
+                    </div>
+                </div>
+                <div class="art-info">
+                    <h2>Water Lilies</h2>
+                    <p class="date">1906</p>
+                    <p class="quote">"One of over 250 water lily paintings created by Monet in his garden at Giverny."</p>
+                </div>
+            </div>
+
+            <div class="art-card" data-artist="Grant Wood" data-artist-dob="1891 - 1942" data-artist-origin="Anamosa, Iowa, USA" data-artist-portrait="https://upload.wikimedia.org/wikipedia/commons/0/02/Grant_Wood.jpg">
+                <div class="art-image-container">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Grant_Wood_-_American_Gothic_-_Google_Art_Project.jpg/800px-Grant_Wood_-_American_Gothic_-_Google_Art_Project.jpg" alt="American Gothic">
+                    <button class="expand-button"><span>&#x26F6;</span> Expand</button>
+                    <button class="back-button">&lt;</button>
+                    <button class="options-button">&#8230;</button>
+                    <div class="artwork-details">
+                        <p class="details">Medium: Oil on beaverboard</p>
+                        <p class="details">Dimensions: 78 cm × 65.3 cm</p>
+                    </div>
+                </div>
+                <div class="art-info">
+                    <h2>American Gothic</h2>
+                    <p class="date">1930</p>
+                    <p class="quote">"An iconic depiction of rural American life that has become one of the most recognizable paintings in American art."</p>
+                </div>
+            </div>
+
+            <div class="art-card" data-artist="Hieronymus Bosch" data-artist-dob="c. 1450 - 1516" data-artist-origin="Hertogenbosch, Netherlands" data-artist-portrait="https://hips.hearstapps.com/hmg-prod/images/gettyimages-464436073.jpg?crop=1xw:1.0xh;center,top&resize=640:*">
+                <div class="art-image-container">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/El_jard%C3%ADn_de_las_Delicias%2C_de_El_Bosco.jpg/1200px-El_jard%C3%ADn_de_las_Delicias%2C_de_El_Bosco.jpg" alt="The Garden of Earthly Delights">
+                    <button class="expand-button"><span>&#x26F6;</span> Expand</button>
+                    <button class="back-button">&lt;</button>
+                    <button class="options-button">&#8230;</button>
+                    <div class="artwork-details">
+                        <p class="details">Medium: Oil on oak panels</p>
+                        <p class="details">Dimensions: 220 cm × 389 cm</p>
+                    </div>
+                </div>
+                <div class="art-info">
+                    <h2>The Garden of Earthly Delights</h2>
+                    <p class="date">c. 1490-1510</p>
+                    <p class="quote">"A fantastical triptych depicting the Garden of Eden, earthly pleasures, and hell in surreal detail."</p>
+                </div>
+            </div>
+
+            <div class="art-card" data-artist="Caspar David Friedrich" data-artist-dob="1774 - 1840" data-artist-origin="Greifswald, Germany" data-artist-portrait="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Gerhard_von_K%C3%BCgelgen_portrait_of_Friedrich.jpg/500px-Gerhard_von_K%C3%BCgelgen_portrait_of_Friedrich.jpg">
+                <div class="art-image-container">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg/800px-Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg" alt="Wanderer above the Sea of Fog">
+                    <button class="expand-button"><span>&#x26F6;</span> Expand</button>
+                    <button class="back-button">&lt;</button>
+                    <button class="options-button">&#8230;</button>
+                    <div class="artwork-details">
+                        <p class="details">Medium: Oil on canvas</p>
+                        <p class="details">Dimensions: 98.4 cm × 74.8 cm</p>
+                    </div>
+                </div>
+                <div class="art-info">
+                    <h2>Wanderer above the Sea of Fog</h2>
+                    <p class="date">1818</p>
+                    <p class="quote">"A masterpiece of Romanticism showing a solitary figure contemplating a misty mountain landscape."</p>
+                </div>
+            </div>
+
+            <div class="art-card" data-artist="Rembrandt van Rijn" data-artist-dob="1606 - 1669" data-artist-origin="Leiden, Netherlands" data-artist-portrait="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Rembrandt_Self-Portrait_%28Royal_Collection%29.jpg/220px-Rembrandt_Self-Portrait_%28Royal_Collection%29.jpg">
+                <div class="art-image-container">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/The_Night_Watch_-_HD.jpg/1200px-The_Night_Watch_-_HD.jpg" alt="The Night Watch">
+                    <button class="expand-button"><span>&#x26F6;</span> Expand</button>
+                    <button class="back-button">&lt;</button>
+                    <button class="options-button">&#8230;</button>
+                    <div class="artwork-details">
+                        <p class="details">Medium: Oil on canvas</p>
+                        <p class="details">Dimensions: 363 cm × 437 cm</p>
+                    </div>
+                </div>
+                <div class="art-info">
+                    <h2>The Night Watch</h2>
+                    <p class="date">1642</p>
+                    <p class="quote">"Rembrandt's largest and most famous work, depicting a militia company moving out, with dramatic use of light and shadow."</p>
+                </div>
+            </div>
+
+        </section>
+
+        <div class="artist-info-bar">
+            <button class="artist-nav-button prev-artist">&lt;</button>
+            <img class="artist-portrait" src="" alt="Artist Portrait">
+            <div class="artist-details">
+                <h3 class="artist-name"></h3>
+                <p class="artist-dob"></p>
+                <p class="artist-origin"></p>
+            </div>
+            <button class="artist-nav-button next-artist">&gt;</button>
+        </div>
+
+        <div class="carousel-dots"></div>
+
+        <div class="action-buttons">
+            <button class="action-btn" aria-label="Favorite"><span>★</span></button>
+        </div>
+
+        <div class="detail-panel">
+            <button class="close-detail">&times;</button>
+            <div class="detail-content">
+                <img class="detail-image" src="" alt="">
+                <div class="detail-info">
+                    <h2 class="detail-title"></h2>
+                    <p class="detail-artist"></p>
+                    <p class="detail-date"></p>
+                    <p class="detail-medium"></p>
+                    <p class="detail-dimensions"></p>
+                    <div class="detail-description"></div>
+                </div>
+            </div>
+        </div>
+
+        <section id="about-section" class="content-section">
+            <div class="section-container">
+                <h2>About Virtual Gallery Art</h2>
+                <div class="about-content">
+                    <p>Welcome to Virtual Gallery Art—a boundaryless space where creativity unfolds beyond walls and screens. This isn't just a gallery; it's a journey through imagination, crafted for art lovers, dreamers, and curious wanderers around the world.</p>
+                    
+                    <p>Here, we believe art should be felt, not just seen. That's why we bring together powerful, thought-provoking works from diverse voices—each piece a spark, a question, a whisper of something more. From bold digital experiments to quiet, emotional moments captured in brushstrokes, Virtual Gallery Art is a place to explore without limits.</p>
+                    
+                    <p>So settle in, follow your instincts, and let the art guide you. This is your space to discover, reflect, and connect—where every visit tells a new story.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="artists-section" class="content-section">
+            <div class="section-container">
+                <h2>Featured Artists</h2>
+                <div class="artists-grid">
+                    <div class="artist-card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Vincent_van_Gogh_-_Self-Portrait_-_Google_Art_Project_%28454045%29.jpg/220px-Vincent_van_Gogh_-_Self-Portrait_-_Google_Art_Project_%28454045%29.jpg" alt="Vincent van Gogh">
+                        <h3>Vincent van Gogh</h3>
+                        <p>1853 - 1890</p>
+                        <p>Zundert, Netherlands</p>
+                    </div>
+                    
+                    <div class="artist-card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Sandro_Botticelli_083.jpg/500px-Sandro_Botticelli_083.jpg" alt="Sandro Botticelli">
+                        <h3>Sandro Botticelli</h3>
+                        <p>1445 - 1510</p>
+                        <p>Florence, Italy</p>
+                    </div>
+                    
+                    <div class="artist-card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Salvador_Dal%C3%AD_1939.jpg/220px-Salvador_Dal%C3%AD_1939.jpg" alt="Salvador Dalí">
+                        <h3>Salvador Dalí</h3>
+                        <p>1904 - 1989</p>
+                        <p>Figueres, Spain</p>
+                    </div>
+                    
+                    <div class="artist-card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Portrait_of_Edvard_Munch_%28cropped%29.png/250px-Portrait_of_Edvard_Munch_%28cropped%29.png" alt="Edvard Munch">
+                        <h3>Edvard Munch</h3>
+                        <p>1863 - 1944</p>
+                        <p>Oslo, Norway</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="exhibitions-section" class="content-section">
+            <div class="section-container">
+                <h2>Current Exhibitions</h2>
+                <div class="exhibitions-grid">
+                    <div class="exhibition-card">
+                        <div class="exhibition-image">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/1200px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg" alt="Post-Impressionism">
+                        </div>
+                        <div class="exhibition-info">
+                            <h3>Post-Impressionism: Beyond the Visible</h3>
+                            <p>A collection highlighting the revolutionary techniques of post-impressionist masters who transformed how we perceive light, color, and form.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="exhibition-card">
+                        <div class="exhibition-image">
+                            <img src="https://upload.wikimedia.org/wikipedia/en/d/dd/The_Persistence_of_Memory.jpg" alt="Surrealism">
+                        </div>
+                        <div class="exhibition-info">
+                            <h3>Dreamscapes: The Surrealist Vision</h3>
+                            <p>Explore the bizarre, beautiful world of surrealism through works that challenge reality and dive into the unconscious mind.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="exhibition-card">
+                        <div class="exhibition-image">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Great_Wave_off_Kanagawa2.jpg/1200px-Great_Wave_off_Kanagawa2.jpg" alt="Japanese Art">
+                        </div>
+                        <div class="exhibition-info">
+                            <h3>Eastern Perspectives</h3>
+                            <p>A celebration of Japanese woodblock prints and their profound influence on Western artistic movements.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Virtual Art Gallery. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
